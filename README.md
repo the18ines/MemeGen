@@ -9,7 +9,6 @@ Créez, personnalisez et partagez vos mèmes facilement avec MemeGen Pro.
 - [Fonctionnalités](#fonctionnalités)
 - [Technologies Utilisées](#technologies-utilisées)
 - [Installation et Exécution](#installation-et-exécution)
-- [Captures d'écran](#captures-décran)
 - [Base de Données](#base-de-données)
 - [Licence](#licence)
 
@@ -48,20 +47,6 @@ MemeGen Pro est une application web permettant aux utilisateurs de créer des m�
 1. Ouvrez le dossier du projet  
 2. Double-cliquez sur `index.html`  
 3. Le projet s’ouvrira dans votre navigateur par défaut
-
-
-## Captures d'écran
-Voici quelques captures d’écran pour illustrer l’application :
-
-**Page d’accueil**  
-![Accueil](images/index.png)
-
-**Création de mème**  
-![Création](images/creator.png)
-
-**Galerie**  
-![Galerie](images/gallery.png)
-
 
 ## Base de Données
 - La galerie et les favoris sont stockés dans **localStorage**.  
