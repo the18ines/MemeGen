@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Galerie - MemeGen Pro</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/gallery.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-theater-masks logo-icon"></i>
+                <h1>MemeGen Pro</h1>
+            </div>
+            <nav class="nav">
+                <a href="index.html" class="nav-link">
+                    <i class="fas fa-arrow-left back-arrow"></i>
+                    <span>Accueil</span>
+                </a>
+                <a href="creator.html" class="nav-link">
+                    <i class="fas fa-palette"></i>
+                    <span>Créer</span>
+                </a>
+                <a href="gallery.html" class="nav-link active">
+                    <i class="fas fa-images"></i>
+                    <span>Galerie</span>
+                </a>
+            </nav>
+        </header>
+
+        <main class="gallery-main">
+            <div class="gallery-header">
+                <div>
+                    <h2 class="gallery-title">Ma Galerie de Mèmes</h2>
+                    <p class="gallery-subtitle">Tous vos mèmes sauvegardés en un seul endroit</p>
+                </div>
+                <div class="gallery-actions">
+                    <button class="btn btn-outline" id="showFavoritesBtn">
+                        <i class="fas fa-star"></i>
+                        <span>Voir Favoris</span>
+                    </button>
+                    <button class="btn btn-outline" id="clearAllBtn">
+                        <i class="fas fa-trash-alt"></i>
+                        <span>Tout supprimer</span>
+                    </button>
+                    <a href="creator.html" class="btn btn-primary">
+                        <i class="fas fa-plus"></i>
+                        <span>Créer nouveau</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="gallery-stats">
+                <div class="stat-card">
+                    <div class="stat-icon red"><i class="fas fa-image"></i></div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="totalMemes">0</div>
+                        <div class="stat-label">Mèmes créés</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon blue"><i class="fas fa-calendar-alt"></i></div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="lastCreated">-</div>
+                        <div class="stat-label">Dernier créé</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon red"><i class="fas fa-star"></i></div>
+                    <div class="stat-info">
+                        <div class="stat-value" id="favorites">0</div>
+                        <div class="stat-label">Favoris</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Les mèmes seront ajoutés dynamiquement ici -->
+            </div>
+
+            <div class="empty-gallery" id="emptyGallery">
+                <div class="empty-icon"><i class="fas fa-folder-open"></i></div>
+                <h3>Aucun mème pour le moment</h3>
+                <p>Commencez à créer des mèmes extraordinaires !</p>
+                <a href="creator.html" class="btn btn-primary">
+                    <i class="fas fa-plus"></i>
+                    <span>Créer mon premier mème</span>
+                </a>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 MemeGen Pro - Créez des mèmes extraordinaires</p>
+        </footer>
+    </div>
+
+    <!-- Modal de détails -->
+    <div class="modal" id="memeModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose"><i class="fas fa-times"></i></button>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="Mème">
+                <div class="modal-actions">
+                    <button class="btn btn-primary" id="modalFavorite">
+                        <i class="fas fa-star" id="favoriteIcon"></i>
+                        <span id="favoriteText">Ajouter aux favoris</span>
+                    </button>
+                    <button class="btn btn-primary" id="modalDownload">
+                        <i class="fas fa-download"></i>
+                        <span>Télécharger</span>
+                    </button>
+                    <button class="btn btn-secondary" id="modalShare">
+                        <i class="fas fa-share-alt"></i>
+                        <span>Partager</span>
+                    </button>
+                    <button class="btn btn-outline" id="modalDelete">
+                        <i class="fas fa-trash-alt"></i>
+                        <span>Supprimer</span>
+                    </button>
+                </div>
+                <div class="modal-info">
+                    <p><strong>Créé le:</strong> <span id="modalDate"></span></p>
+                    <p><strong>ID:</strong> <span id="modalId"></span></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/database.js"></script>
+    <script src="scripts/gallery.js"></script>
+</body>
+</html>
